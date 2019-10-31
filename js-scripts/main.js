@@ -33,14 +33,12 @@ btnConsulta.addEventListener('click',function consultaSaldo() {
 //Saque
 var btnSaque = document.querySelector("#Saque");
 btnSaque.addEventListener('click', function sacarValor(){
-    let valorSaque = Number.parseFloat("Informe o valor a sacar: ");
-    let btnOpcao = valorSaque;
-    if(btnOpcao == true){
-        if (valorSaque > saldoConta) {
-            alert("O valor informado é maior que seu saldo. ");
+    let valorSaque = Number.parseFloat(window.prompt("Informe o valor a sacar: "));
+    if(valorSaque > saldoConta){
+            window.confirm("O valor informado é maior que seu saldo. ");
         }else{
             saldoConta = saldoConta - valorSaque;
             alert(`Você retirou ${valorSaque}, seu saldo é de: ${saldoConta}`);
         }
-    }
+
 })
